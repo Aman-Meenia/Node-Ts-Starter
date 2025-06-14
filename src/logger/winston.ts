@@ -7,7 +7,6 @@ const levels = {
   info: 2,
   debug: 3
 };
-
 // Determine the appropriate log level based on environment
 const level = () => {
   const env = process.env.NODE_ENV || 'development';

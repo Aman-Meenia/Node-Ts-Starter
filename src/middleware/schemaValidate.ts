@@ -1,10 +1,10 @@
 import type { Request, Response, NextFunction } from 'express';
-import { z } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 import ApiError from '../util/ApiError.js';
+import { ZodSchema } from 'zod';
 
 export const schemaValidate =
-  <T>(schema: z.ZodSchema<T>) =>
+  <T>(schema: ZodSchema<T>) =>
   (req: Request, res: Response, next: NextFunction) => {
     const zodValidation = schema.safeParse(req.body);
 

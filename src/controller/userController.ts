@@ -64,12 +64,12 @@ export const createUser = asyncHandler(async (req: Request, res: Response) => {
 export const getUsers = asyncHandler(async (req: Request, res: Response) => {
   const users = await User.find();
 
-  const resData = {
-    users
-  };
   const apiResponse = new ApiResponse({
     statusCode: 200,
-    message: 'Users details fetched successfully'
+    message: 'Users details fetched successfully',
+    data: {
+      users
+    }
   });
   return apiResponse.sendResponse(res);
 });

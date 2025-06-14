@@ -1,4 +1,4 @@
-import type { NextFunction, Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import logger from '../logger/winston.js';
 import config from '../config/config.js';
 
@@ -8,7 +8,7 @@ import config from '../config/config.js';
  * for debugging and also store the Error message and Error stack in the logger.
  */
 
-export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
+export const errorHandler = (err: Error, req: Request, res: Response) => {
   const statusCode = (err as any).statusCode || 500;
   const message = err.message || 'Internal server error';
   const success = (err as any).succes || false;

@@ -15,6 +15,15 @@ app.use(urlencoded({ extended: true }));
 app.use(json());
 app.use(cors());
 
+type NameType = {
+  name: string;
+};
+
+const name: NameType = {
+  name: 'Aman'
+};
+logger.debug(name);
+
 // Routes
 app.use('/api/user', userRouter);
 
