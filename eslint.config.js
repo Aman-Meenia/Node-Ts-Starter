@@ -25,7 +25,14 @@ export default defineConfig([
     rules: {
       'no-console': 'error', // Give error on using console
       '@typescript-eslint/no-explicit-any': 'off', // Don't give error on using any
-      'no-duplicate-imports': 'error' // Allow multiple imports of same module
+      'no-duplicate-imports': 'error', // Allow multiple imports of same module
+      '@typescript-eslint/no-unused-vars': [
+        // declare unused variable start with ( _ )
+        'warn',
+        {
+          argsIgnorePattern: '^_'
+        }
+      ]
     }
   }
 ]);
